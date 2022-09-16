@@ -146,7 +146,7 @@ public class MyLinkedList <T> {
 	 * @param list The MyLinkedList to check.
 	 * @param answer The expected answer, in the form of an int array.
 	 */
-	public static void assertArraysEqual(MyLinkedList list, int[] answer) {
+	public static void assertArraysEqual(MyLinkedList <?> list, int[] answer) {
 		if (list.size() != answer.length) {
 			throw new AssertionError("Expected list of length " + answer.length + " but got " + list.size());
 		}
@@ -161,7 +161,7 @@ public class MyLinkedList <T> {
 	 * Test that the empty arraylist has size 0.
 	 */
 	public static void test1() {
-		MyLinkedList<Integer> list = new MyLinkedList();
+		MyLinkedList<Integer> list = new MyLinkedList <> ();
 		int[] answer = new int[0];
 		assertArraysEqual(list, answer);
 	}
@@ -170,7 +170,7 @@ public class MyLinkedList <T> {
 	 * Test insertion into an arraylist (without resizing).
 	 */
 	public static void test2() {
-		MyLinkedList list = new MyLinkedList();
+		MyLinkedList <Integer> list = new MyLinkedList <> ();
 		for (int i = 0; i < 3; i++) {
 			list.add(i * i);
 		}
@@ -182,7 +182,7 @@ public class MyLinkedList <T> {
 	 * Test deletion from an arraylist without emptying it.
 	 */
 	public static void test3() {
-		MyLinkedList <Integer> list = new MyLinkedList();
+		MyLinkedList <Integer> list = new MyLinkedList <> ();
 		for (int i = 0; i < 5; i++) {
 			list.add(i * i);
 		}
@@ -196,7 +196,7 @@ public class MyLinkedList <T> {
 	 * Test deletion from an arraylist and emptying it.
 	 */
 	public static void test4() {
-		MyLinkedList <Integer> list = new MyLinkedList();
+		MyLinkedList <Integer> list = new MyLinkedList <> ();
 		for (int i = 0; i < 5; i++) {
 			list.add(i * i);
 		}
@@ -225,7 +225,7 @@ public class MyLinkedList <T> {
 	 * Test insertion into an arraylist (with resizing).
 	 */
 	public static void test5() {
-		MyLinkedList <Integer> list = new MyLinkedList();
+		MyLinkedList <Integer> list = new MyLinkedList <> ();
 		for (int i = 0; i < 12; i++) {
 			list.add(i * i);
 		}
