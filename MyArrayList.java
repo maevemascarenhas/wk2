@@ -115,7 +115,7 @@ public class MyArrayList<T> {
 	 * @param list The MyArrayList to check.
 	 * @param answer The expected answer, in the form of an int array.
 	 */
-	public static void assertArraysEqual(MyArrayList list, int[] answer) {
+	public static void assertArraysEqual(MyArrayList <?> list, int[] answer) {
 		if (list.size() != answer.length) {
 			throw new AssertionError("Expected list of length " + answer.length + " but got " + list.size());
 		}
@@ -130,7 +130,7 @@ public class MyArrayList<T> {
 	 * Test that the empty arraylist has size 0.
 	 */
 	public static void test1() {
-		MyArrayList <Integer> list = new MyArrayList(3);
+		MyArrayList <Integer> list = new MyArrayList <> (3);
 		int[] answer = new int[0];
 		assertArraysEqual(list, answer);
 	}
@@ -139,7 +139,7 @@ public class MyArrayList<T> {
 	 * Test insertion into an arraylist (without resizing).
 	 */
 	public static void test2() {
-		MyArrayList <Integer> list = new MyArrayList(3);
+		MyArrayList <Integer> list = new MyArrayList <> (3);
 		for (int i = 0; i < 3; i++) {
 			list.add(i * i);
 		}
@@ -151,7 +151,7 @@ public class MyArrayList<T> {
 	 * Test deletion from an arraylist without emptying it.
 	 */
 	public static void test3() {
-		MyArrayList <Integer> list = new MyArrayList(5);
+		MyArrayList <Integer> list = new MyArrayList <> (5);
 		for (int i = 0; i < 5; i++) {
 			list.add(i * i);
 		}
@@ -165,7 +165,7 @@ public class MyArrayList<T> {
 	 * Test deletion from an arraylist and emptying it.
 	 */
 	public static void test4() {
-		MyArrayList <Integer> list = new MyArrayList(5);
+		MyArrayList <Integer> list = new MyArrayList <> (5);
 		for (int i = 0; i < 5; i++) {
 			list.add(i * i);
 		}
@@ -194,7 +194,7 @@ public class MyArrayList<T> {
 	 * Test insertion into an arraylist (with resizing).
 	 */
 	public static void test5() {
-		MyArrayList <Integer> list = new MyArrayList(5);
+		MyArrayList <Integer> list = new MyArrayList <> (5);
 		for (int i = 0; i < 12; i++) {
 			list.add(i * i);
 		}
